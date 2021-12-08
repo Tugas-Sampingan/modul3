@@ -4,8 +4,7 @@ include 'Firenze_Connection.php';
 
 
 $id_buku = $_GET['id_buku'];
-$select2 = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_buku'");
-$display = mysqli_fetch_assoc($select2);
+$selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_buku'");
 
 
 
@@ -25,7 +24,7 @@ $display = mysqli_fetch_assoc($select2);
 
     <!-- navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,60 +39,63 @@ $display = mysqli_fetch_assoc($select2);
 
 
     <!-- books details -->
-    <br><br><br>
-    <div class="container shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded mt-5">
         <h2 class="text-center"><b>Detail Buku</b></h2>
-        <br><br>
         <div class="text-center"> <img src="https://www.bukukita.com/babacms/displaybuku/101149_f.jpg" alt="website" width="350"></div>
         <hr class="my-5" style="height: 5px;color:blue">
         <table>
-            <tr>
-                <td><b>Judul:</b></td>
-            </tr>
-            <tr>
-                <td>Otodidak Desain dan Pemrograman Website</td>
-            </tr>
-            <tr>
-                <td><b>Penulis:</b></td>
-            </tr>
-            <tr>
-                <td>Firenze_1202194019</td>
-            </tr>
-            <tr>
-                <td><b>Tahun Terbit:</b></td>
-            </tr>
-            <tr>
-                <td>2017</td>
-            </tr>
-            <tr>
-                <td><b>Deskripsi:</b></td>
-            </tr>
-            <tr>
-                <td>Buku ini berisikan Buku ini membahas secara praktis pemrograman dan desain website yang memadukan Dreamweaver, HTML, CSS, dan PHP bagi pemula.</td>
-            </tr>
-            <tr>
-                <td><b>Bahasa:</b></td>
-            </tr>
-            <tr>
-                <td>Indonesia</td>
-            </tr>
-            <tr>
-                <td><b>Tag:</b></td>
-            </tr>
-            <tr>
-                <td>Pemrogaman,Website,OOP.</td>
-            </tr>
+            <?php
+            if (mysqli_num_rows($selected) > 0) {
+                while ($row = mysqli_fetch_array($selected)) {
+            ?>
+                    <tr>
+                        <td><b>Judul:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['judul_buku']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Penulis:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['penulis_buku']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Tahun Terbit:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['tahun_terbit']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Deskripsi:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['deskripsi']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Bahasa:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['bahasa']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Tag:</b></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $row['tag']; ?></td>
+                    </tr>
+
+
+
         </table>
-        <br>
-        <br>
-        <center>
-            <form class="my-auto" action="Firenze_Modal.php">
-                <button type="submit" class="btn btn-primary" style="width: 45%; margin-bottom"><b>Sunting</b></button>
-            </form>
-            <button type="submit" class="btn btn-danger" style="width: 45%; margin-bottom"><b>Hapus</b></button>
-        </center>
-        <br>
-        <br>
+        <div class="d-flex align-items-center justify-content-center m-5">
+            <a href="" type="submit" class="btn btn-primary me-2" style="width: 50%;"><b>Sunting</b></a>
+            <a href="Firenze_detailBuku.php?id_buku=<?= $row["id_buku"]; ?>" type="submit" class="btn btn-danger" style="width: 50%;"><b>Hapus</b></a>
+        </div>
+<?php
+                }
+            }
+?>
 
     </div>
 
