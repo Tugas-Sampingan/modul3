@@ -8,15 +8,13 @@ $desk = $_POST["deskripsi"];
 $bahasa = $_POST["bahasa"];
 $tag = $_POST["tag"];
 
-echo $tag;
 
-// if (isset($_POST['upload'])) {
-//     $dir = 'gambar/';
-//     $filename = $_FILES['foto']['name'];
-//     move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $filename);
-//     mysqli_query($conn, "INSERT INTO buku_table VALUES('','$judul','$penulis','$tTerbit','$desk','$filename','$tag', '$bahasa')");
-//     echo 'asdsadad';
-// }
+if (isset($_POST['upload'])) {
+    $dir = 'gambar/';
+    $filename = $_FILES['foto']['name'];
+    move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $filename);
+    mysqli_query($conn, "INSERT INTO buku_table VALUES('','$judul','$penulis','$tTerbit','$desk','$filename','$tag', '$bahasa')");
+}
 // if (!in_array($ext, $ekstensi)) {
 //     header("location:index.php?alert=gagal_ekstensi");
 // } else {
