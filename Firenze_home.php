@@ -19,7 +19,7 @@ $baris = mysqli_num_rows($tabel);
 
     <!-- navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +31,6 @@ $baris = mysqli_num_rows($tabel);
             </div>
         </nav>
     </header>
-
-    <br><br><br><br><br><br><br><br><br><br><br>
 
     <!-- CEK BUKU -->
 
