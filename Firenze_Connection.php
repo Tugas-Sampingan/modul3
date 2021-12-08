@@ -1,8 +1,7 @@
 <?php
 
-$koneksi = mysqli_connect("localhost:3307", "root", "", "modul3");
+$conn = mysqli_connect("localhost", "root", "", "modul3");
 
-if(!$koneksi){
+if (!$conn) {
     echo "Database Tidak Dapat Terhubung!";
 }
-?>

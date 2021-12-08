@@ -3,41 +3,42 @@
 include 'Firenze_Connection.php';
 
 
-    $id_buku = $_GET['id_buku'];
-    $select2 = mysqli_query($conn,"SELECT * FROM buku_table WHERE id_buku = '$id_buku'");
-    $display = mysqli_fetch_assoc($select2);
+$id_buku = $_GET['id_buku'];
+$select2 = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_buku'");
+$display = mysqli_fetch_assoc($select2);
 
-    
+
 
 ?>
 <html>
-    <head>
-    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <title>DETAIL BUKU - MODUL3 FIRENZE</title>
-    </head>
 
-    <body>
-        <script src= "js/bootsrap.js"></script>
-        <script src="js/popper.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>DETAIL BUKU - MODUL3 FIRENZE</title>
+</head>
+
+<body>
+    <script src="js/bootsrap.js"></script>
+    <script src="js/popper.min.js"></script>
 
     <!-- navbar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <form class="d-flex">
-                <button class="btn btn-primary" type="submit">Tambah Buku</button>
-            </form>
+                <a class="navbar-brand" href="#"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex">
+                    <button class="btn btn-primary" type="submit">Tambah Buku</button>
+                </form>
             </div>
         </nav>
-        </header>
+    </header>
 
-    
+
     <!-- books details -->
     <br><br><br>
     <div class="container shadow-lg p-3 mb-5 bg-body rounded">
@@ -93,22 +94,23 @@ include 'Firenze_Connection.php';
         </center>
         <br>
         <br>
-        
+
     </div>
 
 
     <!-- footer -->
-        <footer class="mt-4">
+    <footer class="mt-4">
         <div class="container-fullwidth">
             <br><br><br>
             <div class="jumbotron" id="home" style="text-align: center;">
-            <div class="container"></div>
-            <div class="text-center">
-            <img src="logo-ead.png" alt="logo" width="200" height="80">
-            <h6 class="display-5"><b>Perpustakaan EAD</b></h6>
-            <p>©Firenze_1202194019</p>
+                <div class="container"></div>
+                <div class="text-center">
+                    <img src="logo-ead.png" alt="logo" width="200" height="80">
+                    <h6 class="display-5"><b>Perpustakaan EAD</b></h6>
+                    <p>©Firenze_1202194019</p>
+                </div>
             </div>
-        </div>
-        </footer>
-    </body>
+    </footer>
+</body>
+
 </html>

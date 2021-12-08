@@ -1,147 +1,114 @@
 <html>
-    <head>
+
+<head>
     <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <title>TAMBAH BUKU - MODUL3 FIRENZE</title>
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>TAMBAH BUKU - MODUL3 FIRENZE</title>
+</head>
 
-    <?php
-    include "Firenze_Create.php";
-    if (isset($_POST["submit"])) {
-        if (insertIsi($_POST) > 0) {
-            echo "
-                    <script>
-                        alert('Buku berhasil ditambahkan!');
-                        document.location.href = 'Firenze_tambahBuku.php';
-                    </script>
-                ";
-        } else {
-            echo "
-                    <script>
-                        alert('Gagal untuk menambahkan buku ! ');
-                        document.location.href = 'Firenze_tambahBuku.php';
-                    </script>
-                ";
-        }
-    }
-    ?>
+<body>
+    <script src="js/bootsrap.js"></script>
+    <script src="js/popper.min.js"></script>
 
-    <body>
-        <script src= "js/bootsrap.js"></script>
-        <script src="js/popper.min.js"></script>
-
-        <!-- navbar -->
-        <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <form class="d-flex">
-                <button class="btn btn-primary" type="submit">Tambah Buku</button>
-            </form>
+                <a class="navbar-brand"><img src="logo-ead.png" style="width: 130px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex">
+                    <button class="btn btn-primary" type="submit">Tambah Buku</button>
+                </form>
             </div>
         </nav>
-        </header>
-
-        <br><br><br><br>
-        <!-- add books -->
-        <div class="container shadow shadow-intensity-lg">
-        <h2 class="text-center"><b>Tambah Data Buku</b></h2>
-        <form method="POST" action="Firenze_Create.php" >
-        <br><br>
-            <div class="form-group">
-              <label for="judulBuku"><b>Judul Buku</b></label>
-              <input type="text" class="form-control" id="judulBuku" placeholder="Masukkan Judul Buku. Ex: Kalkulus IA" name="judulBuku">
+    </header>
+    <div class="container shadow mt-5 p-5">
+        <form action="Firenze_Create.php" method="post">
+            <h2 class="text-center">Tambah Data Buku</h2>
+            <div class="form-group mt-3">
+                <label for="judul_buku"><b>Judul Buku</b> </label>
+                <input type="text" class="form-control" id="judul_buku" placeholder="Contoh: Pemrograman web Bersama EAD" name="judul_buku">
             </div>
-            
-            <div class="form-group">
-                <label for="penulis"><b>Penulis</b></label>
-                <input type="text" class="form-control" id="penulis" placeholder="Firenze_1202194019" name="penulis" value="Firenze_1202194019" required>
+            <div class="form-group mt-3">
+                <label for="penulis"><b>Penulis</b> </label>
+                <input type="email" class="form-control" id="penulis" value="Firenze_120219401" readonly name="penulis">
             </div>
-
-            <div class="form-group">
-                <label for="tahunTerbit"><b>Tahun Terbit</b></label>
-                <input type="text" class="form-control" id="tahunTerbit" placeholder="Masukkan Tahun Terbit. Ex: 1990" name="tahunTerbit">
+            <div class="form-group mt-3">
+                <label for="tahun_terbit"><b>Tahun Terbit</b> </label>
+                <input type="text" class="form-control" id="tahun_terbit" placeholder="Contoh: 1990" name="tahun_terbit">
             </div>
-
-            <div class="form-group">
-                <label for="deskripsi"><b>Deskripsi</b></label>
-                <textarea type="text" class="form-control" rows="5" id="deskripsi" placeholder="Masukkan Deskripsi Buku. ex: buku ini berisi tentang..." name="Deskripsi"></textarea>
+            <div class="form-group mt-3">
+                <label for="deskripsi"><b>Deskripsi</b> </label>
+                <textarea class="form-control" id="deskripsi" rows="3" placeholder="Contoh: Buku ini menjelaskan tentang ..." name="deskripsi"></textarea>
             </div>
-            <br>
-            <div class="form-group " >
-                <label for="Bahasa" ><b>Bahasa</b></label>
+            <div class="form-group mt-3">
+                <label for="bahasa"><b>Bahasa</b></label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="indonesia" id="indonesia" value="indonesia">
+                    <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia">
                     <label class="form-check-label" for="indonesia">Bahasa Indonesia</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="lainnya" id="lainnya" value="lainnya">
+                    <input class="form-check-input" type="radio" name="bahasa" id="lainnya" value="lainnya">
                     <label class="form-check-label" for="lainnya">Lainnya</label>
                 </div>
             </div>
-            <br>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="Tag"><b>Tag</b></label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman">
+                    <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag">
                     <label class="form-check-label" for="pemrogaman">Pemrogaman</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="website" value="website">
+                    <input class="form-check-input" type="checkbox" id="website" value="website" name="tag">
                     <label class="form-check-label" for="website">Website</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="java" value="java">
+                    <input class="form-check-input" type="checkbox" id="java" value="java" name="tag">
                     <label class="form-check-label" for="java">Java</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="oop" value="oop">
+                    <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag">
                     <label class="form-check-label" for="oop">OOP</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="mvc" value="mvc">
+                    <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag">
                     <label class="form-check-label" for="mvc">MVC</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus">
+                    <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag">
                     <label class="form-check-label" for="kalkulus">Kalkulus</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya">
+                    <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag">
                     <label class="form-check-label" for="lainnya">Lainnya</label>
                 </div>
             </div>
-            <br>
-            <div class="form - group">
-                <label for="gambar"><b>Gambar</b></label>
-                <input type="file" class="form-control" id="inputGroupFile02">
+            <div class="form-group mt-3">
+                <label>Foto :</label>
+                <input type="file" name="foto" required="required">
+                <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
             </div>
-            <br>
-            <br>
-            <center><button type="submit" class="btn btn-primary" style="width: 50%; margin-bottom">+ TAMBAH</button></center>
-          </form>
-          <br>
-          <br>
-       
-        </div>
-        <br><br><br><br>
 
-        <!-- footer -->
-        <footer class="mt-4">
+            <center><button type="submit" class="btn btn-primary mt-4 text-center" style="width: 50%">+ TAMBAH</button></center>
+        </form>
+    </div>
+
+    <!-- footer -->
+    <footer class="mt-4">
         <div class="container-fullwidth">
             <br><br><br>
             <div class="jumbotron" id="home" style="text-align: center;">
-            <div class="container"></div>
-            <div class="text-center">
-            <img src="logo-ead.png" alt="logo" width="200" height="80">
-            <h6 class="display-5"><b>Perpustakaan EAD</b></h6>
-            <p>©Firenze_1202194019</p>
+                <div class="container"></div>
+                <div class="text-center">
+                    <img src="logo-ead.png" alt="logo" width="200" height="80">
+                    <h6 class="display-5"><b>Perpustakaan EAD</b></h6>
+                    <p>©Firenze_1202194019</p>
+                </div>
             </div>
-        </div>
-        </footer>
-    </body>
+    </footer>
+</body>
+
 </html>
