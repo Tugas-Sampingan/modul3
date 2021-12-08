@@ -58,39 +58,42 @@
             <div class="form-group mt-3">
                 <label for="Tag"><b>Tag</b></label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag">
+                    <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag[]">
                     <label class="form-check-label" for="pemrogaman">Pemrogaman</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="website" value="website" name="tag">
+                    <input class="form-check-input" type="checkbox" id="website" value="website" name="tag[]">
                     <label class="form-check-label" for="website">Website</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="java" value="java" name="tag">
+                    <input class="form-check-input" type="checkbox" id="java" value="java" name="tag[]">
                     <label class="form-check-label" for="java">Java</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag">
+                    <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag[]">
                     <label class="form-check-label" for="oop">OOP</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag">
+                    <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag[]">
                     <label class="form-check-label" for="mvc">MVC</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag">
+                    <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag[]">
                     <label class="form-check-label" for="kalkulus">Kalkulus</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag">
+                    <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag[]">
                     <label class="form-check-label" for="lainnya">Lainnya</label>
                 </div>
             </div>
-            <div class="form-group mt-3">
-                <label>Foto :</label>
-                <input type="file" name="foto" required="required">
-                <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
+
+            <br>
+            <div class="form - group">
+                <label for="gambar"><b>Gambar</b></label>
+                <input type="file" name="foto" class="form-control" id="inputGroupFile02" required="required">
             </div>
+            <br><br>
+            
             <center> <input style="width: 50%;" class="btn btn-primary" type="submit" name="upload" id="upload" value="+ Tambah Buku"></center>
         </form>
     </div>

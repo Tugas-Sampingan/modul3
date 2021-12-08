@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Nov 22, 2021 at 03:41 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 08 Des 2021 pada 13.09
+-- Versi server: 10.4.19-MariaDB
+-- Versi PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku_table`
+-- Struktur dari tabel `buku_table`
 --
 
 CREATE TABLE `buku_table` (
@@ -43,10 +43,20 @@ CREATE TABLE `buku_table` (
 --
 
 --
--- Indexes for table `buku_table`
+-- Indeks untuk tabel `buku_table`
 --
 ALTER TABLE `buku_table`
   ADD PRIMARY KEY (`id_buku`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `buku_table`
+--
+ALTER TABLE `buku_table`
+  MODIFY `id_buku` int(100) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

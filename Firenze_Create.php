@@ -7,14 +7,16 @@ $tTerbit = $_POST["tahun_terbit"];
 $desk = $_POST["deskripsi"];
 $bahasa = $_POST["bahasa"];
 $tag = $_POST["tag"];
+$tagline = implode("; ",$tag);
 
 
 if (isset($_POST['upload'])) {
-    $dir = 'gambar/';
+    $dir = 'buku/';
     $filename = $_FILES['foto']['name'];
     move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $filename);
-    mysqli_query($conn, "INSERT INTO buku_table VALUES('','$judul','$penulis','$tTerbit','$desk','$filename','$tag', '$bahasa')");
+    mysqli_query($conn, "INSERT INTO buku_table VALUES('','$judul','$penulis','$tTerbit','$desk','$filename','$tagline', '$bahasa')");
 }
+
 // if (!in_array($ext, $ekstensi)) {
 //     header("location:index.php?alert=gagal_ekstensi");
 // } else {
