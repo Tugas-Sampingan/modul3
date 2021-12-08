@@ -26,7 +26,7 @@
         </nav>
     </header>
     <div class="container shadow mt-5 p-5">
-        <form action="Firenze_Create.php" method="post">
+        <form action="Firenze_Create.php" method="post" enctype="multipart/form-data">
             <h2 class="text-center">Tambah Data Buku</h2>
             <div class="form-group mt-3">
                 <label for="judul_buku"><b>Judul Buku</b> </label>
@@ -91,8 +91,7 @@
                 <input type="file" name="foto" required="required">
                 <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
             </div>
-
-            <center><button type="submit" class="btn btn-primary mt-4 text-center" style="width: 50%">+ TAMBAH</button></center>
+            <center> <input style="width: 50%;" class="btn btn-primary" type="submit" name="upload" id="upload" value="+ Tambah Buku"></center>
         </form>
     </div>
 
