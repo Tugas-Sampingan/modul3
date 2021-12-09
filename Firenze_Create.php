@@ -17,5 +17,13 @@ if (isset($_POST['upload'])) {
     mysqli_query($conn, "INSERT INTO buku_table VALUES('','$judul','$penulis','$tTerbit','$desk','$filename','$tagline', '$bahasa')");
 
     header("location:Firenze_home.php?");
+} else if (isset($_POST['update'])) {
+    $id = 
+    $dir = 'buku/';
+    $filename = $_FILES['foto']['name'];
+    move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $filename);
+    mysqli_query($conn, "UPDATE buku_table VALUES(judul_buku='$judul', penulis_buku='$penulis', tahun_terbit='$tTerbit', deskripsi='$desk', gambar='$filename', tag='$tagline', bahasa='$bahasa') WHERE id_buku='$id'");
+
+    header("location:Firenze_home.php?");
 }
 
