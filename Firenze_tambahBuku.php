@@ -47,7 +47,7 @@
             <div class="form-group mt-3">
                 <label for="bahasa"><b>Bahasa</b></label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia">
+                    <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia" required="required">
                     <label class="form-check-label" for="indonesia">Bahasa Indonesia</label>
                 </div>
                 <div class="form-check form-check-inline">
