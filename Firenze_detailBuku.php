@@ -54,7 +54,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                 if (mysqli_num_rows($selected) > 0) {
                     while ($row = mysqli_fetch_array($selected)) {
                 ?>
-                        <form action="Firenze_Update.php" method="post">
+                        <form action="Firenze_Update.php?id_buku=<?= $row["id_buku"]; ?>" method="post" enctype="multipart/form-data">
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <div class="container shadow mt-5 p-5">
@@ -78,11 +78,11 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                                     <div class="form-group mt-3">
                                         <label for="bahasa"><b>Bahasa</b></label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia">
+                                            <input class="form-check-input" type="radio" name="bhs" id="indonesia" value="indonesia">
                                             <label class="form-check-label" for="indonesia">Bahasa Indonesia</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bahasa" id="lainnya" value="lainnya">
+                                            <input class="form-check-input" type="radio" name="bhs" id="lainnya" value="lainnya">
                                             <label class="form-check-label" for="lainnya">Lainnya</label>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                                     </div>
                                     <br>
                                     <div class="form - group">
-                                        <label for="gambar"><b>Gambar</b></label>
+                                        <label for="foto"><b>Gambar</b></label>
                                         <input type="file" name="foto" class="form-control" id="inputGroupFile02" required="required">
                                     </div>
                                     <br><br>
@@ -129,7 +129,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                             <!-- Modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <a href="Firenze_Update.php?id_buku=<?= $row["id_buku"]; ?>" type="submit" class="btn btn-danger" style="width: 50%;"><b>Simpan Perubahan</b></a>
+                                <input type="submit" class="btn btn-primary" name="simpan" value="simpan">
                             </div>
                         </form>
             </div>
