@@ -73,47 +73,48 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="deskripsi"><b>Deskripsi</b> </label>
-                                        <textarea class="form-control" id="deskripsi" rows="3" placeholder=<?php echo $row['deskripsi']; ?> name="deskripsi"></textarea>
+                                        <textarea class="form-control" id="deskripsi" rows="3" name="deskripsi"><?php echo $row['deskripsi']; ?></textarea>
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="bahasa"><b>Bahasa</b></label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bhs" id="indonesia" value="indonesia">
+                                            <input class="form-check-input" type="radio" name="bhs" id="indonesia" value="indonesia" <?php if($row['bahasa']=='indonesia') echo 'checked'?>>
                                             <label class="form-check-label" for="indonesia">Bahasa Indonesia</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bhs" id="lainnya" value="lainnya">
+                                            <input class="form-check-input" type="radio" name="bhs" id="lainnya" value="lainnya" <?php if($row['bahasa']=='lainnya') echo 'checked'?>>
                                             <label class="form-check-label" for="lainnya">Lainnya</label>
                                         </div>
                                     </div>
                                     <div class="form-group mt-3">
+                                        <?php $arr_tag = explode ("; ",$row['tag']); ?>
                                         <label for="Tag"><b>Tag</b></label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag[]"  >
                                             <label class="form-check-label" for="pemrogaman">Pemrogaman</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="website" value="website" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="website" value="website" name="tag[]">
                                             <label class="form-check-label" for="website">Website</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="java" value="java" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="java" value="java" name="tag[]">
                                             <label class="form-check-label" for="java">Java</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag[]">
                                             <label class="form-check-label" for="oop">OOP</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag[]">
                                             <label class="form-check-label" for="mvc">MVC</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag[]">
                                             <label class="form-check-label" for="kalkulus">Kalkulus</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag">
+                                            <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag[]">
                                             <label class="form-check-label" for="lainnya">Lainnya</label>
                                         </div>
                                     </div>

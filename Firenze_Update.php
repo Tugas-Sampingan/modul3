@@ -8,7 +8,7 @@ $penulis_buku = $_POST['penulis'];
 $tahun_terbit = $_POST['tahun_terbit'];
 $deskripsi = $_POST['deskripsi'];
 $bahasa = $_POST['bhs'];
-$tag = $_POST['tag'];
+$tag = implode("; ", $_POST['tag']);
 $gambar = $_FILES['foto']['name'];
 
 $query = "UPDATE buku_table SET 
