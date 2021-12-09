@@ -90,31 +90,31 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                                         <?php $arr_tag = explode ("; ",$row['tag']); ?>
                                         <label for="Tag"><b>Tag</b></label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag[]"  >
-                                            <label class="form-check-label" for="pemrogaman">Pemrogaman</label>
+                                            <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrograman" name="tag[]" <?php if(in_array("pemrograman", $arr_tag)) echo "checked"; ?> >
+                                            <label class="form-check-label" for="pemrograman">Pemrogaman</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="website" value="website" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="website" value="website" name="tag[]" <?php if(in_array("website", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="website">Website</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="java" value="java" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="java" value="java" name="tag[]" <?php if(in_array("java", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="java">Java</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag[]" <?php if(in_array("oop", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="oop">OOP</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag[]" <?php if(in_array("mvc", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="mvc">MVC</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="kalkulus" value="kalkulus" name="tag[]" <?php if(in_array("kalkulus", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="kalkulus">Kalkulus</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag[]">
+                                            <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag[]" <?php if(in_array("lainnya", $arr_tag)) echo "checked"; ?> >
                                             <label class="form-check-label" for="lainnya">Lainnya</label>
                                         </div>
                                     </div>
