@@ -50,13 +50,18 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
+            <?php
+            if (mysqli_num_rows($selected) > 0) {
+                while ($row = mysqli_fetch_array($selected)) {
+            ?>
+            
           <!-- Modal body -->
           <div class="modal-body">
             <div class="container shadow mt-5 p-5">
 
                     <div class="form-group mt-3">
                         <label for="judul_buku"><b>Judul Buku</b> </label>
-                        <input type="text" class="form-control" id="judul_buku" placeholder="Contoh: Pemrograman web Bersama EAD" name="judul_buku">
+                        <input type="text" class="form-control" id="judul_buku" placeholder="Contoh: Pemrograman web Bersama EAD" name="judul_buku" value="<?php echo $row['judul_buku']; ?>">
                     </div>
                     <div class="form-group mt-3">
                         <label for="penulis"><b>Penulis</b> </label>
@@ -64,11 +69,11 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                     </div>
                     <div class="form-group mt-3">
                         <label for="tahun_terbit"><b>Tahun Terbit</b> </label>
-                        <input type="text" class="form-control" id="tahun_terbit" placeholder="Contoh: 1990" name="tahun_terbit">
+                        <input type="text" class="form-control" id="tahun_terbit" placeholder="Contoh: 1990" name="tahun_terbit" value=<?php echo $row['tahun_terbit']; ?>>
                     </div>
                     <div class="form-group mt-3">
                         <label for="deskripsi"><b>Deskripsi</b> </label>
-                        <textarea class="form-control" id="deskripsi" rows="3" placeholder="Contoh: Buku ini menjelaskan tentang ..." name="deskripsi"></textarea>
+                        <textarea class="form-control" id="deskripsi" rows="3" placeholder=<?php echo $row['tahun_terbit']; ?> name="deskripsi"></textarea>
                     </div>
                     <div class="form-group mt-3">
                         <label for="bahasa"><b>Bahasa</b></label>
@@ -139,10 +144,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
         <div class="text-center"> <img src="https://www.bukukita.com/babacms/displaybuku/101149_f.jpg" alt="website" width="350"></div>
         <hr class="my-5" style="height: 5px;color:blue">
         <table>
-            <?php
-            if (mysqli_num_rows($selected) > 0) {
-                while ($row = mysqli_fetch_array($selected)) {
-            ?>
+
                     <tr>
                         <td><b>Judul:</b></td>
                     </tr>
