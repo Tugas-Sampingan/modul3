@@ -54,10 +54,10 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
             if (mysqli_num_rows($selected) > 0) {
                 while ($row = mysqli_fetch_array($selected)) {
             ?>
-            
+
           <!-- Modal body -->
           <div class="modal-body">
-            <div class="container shadow mt-5 p-5">
+            <div class="container">
 
                     <div class="form-group mt-3">
                         <label for="judul_buku"><b>Judul Buku</b> </label>
@@ -73,7 +73,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                     </div>
                     <div class="form-group mt-3">
                         <label for="deskripsi"><b>Deskripsi</b> </label>
-                        <textarea class="form-control" id="deskripsi" rows="3" placeholder=<?php echo $row['tahun_terbit']; ?> name="deskripsi"></textarea>
+                        <textarea class="form-control" id="deskripsi" rows="3" placeholder=<?php echo $row['deskripsi']; ?> name="deskripsi"></textarea>
                     </div>
                     <div class="form-group mt-3">
                         <label for="bahasa"><b>Bahasa</b></label>
@@ -130,7 +130,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Simpan Perubahan</button>
           </div>
 
