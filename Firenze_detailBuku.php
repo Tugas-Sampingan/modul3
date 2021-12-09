@@ -131,7 +131,8 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+            <?php $id = $row['id_buku']; ?>
+            <input class="btn btn-primary" type="submit" name="update" id="update" value="Simpan Perubahan" data-dismiss="modal"></center>
           </div>
 
         </div>
