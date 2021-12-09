@@ -19,9 +19,6 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
 </head>
 
 <body>
-    <script src="js/bootsrap.js"></script>
-    <script src="js/popper.min.js"></script>
-
     <!-- navbar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -84,13 +81,12 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                     <tr>
                         <td><?php echo $row['tag']; ?></td>
                     </tr>
-
-
-
         </table>
         <div class="d-flex align-items-center justify-content-center m-5">
-            <a href="" type="submit" class="btn btn-primary me-2" style="width: 50%;"><b>Sunting</b></a>
-            <a href="Firenze_detailBuku.php?id_buku=<?= $row["id_buku"]; ?>" type="submit" class="btn btn-danger" style="width: 50%;"><b>Hapus</b></a>
+            <button id="sunting" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width: 50%;">
+                Sunting
+            </button>
+            <a href="Firenze_Delete.php?id_buku=<?= $row["id_buku"]; ?>" type="submit" class="btn btn-danger" style="width: 50%;"><b>Hapus</b></a>
         </div>
 <?php
                 }
@@ -98,6 +94,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
 ?>
 
     </div>
+
 
 
     <!-- footer -->
@@ -113,6 +110,10 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                 </div>
             </div>
     </footer>
+
+
+    <script src="js/bootsrap.js"></script>
+    <script src="js/popper.min.js"></script>
 </body>
 
 </html>
