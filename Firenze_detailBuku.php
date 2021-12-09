@@ -41,7 +41,6 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
 
     <!-- The Modal -->
     <div class="modal" id="suntingModal">
-<<<<<<< HEAD
         <div class="modal-dialog" style="max-width: 60%;">
             <div class="modal-content">
 
@@ -50,101 +49,6 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                     <h4 class="modal-title">Sunting</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-=======
-      <div class="modal-dialog" style="max-width: 60%;" >
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Sunting</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-            <?php
-            if (mysqli_num_rows($selected) > 0) {
-                while ($row = mysqli_fetch_array($selected)) {
-            ?>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="container">
-
-                    <div class="form-group mt-3">
-                        <label for="judul_buku"><b>Judul Buku</b> </label>
-                        <input type="text" class="form-control" id="judul_buku" placeholder="Contoh: Pemrograman web Bersama EAD" name="judul_buku" value="<?php echo $row['judul_buku']; ?>">
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="penulis"><b>Penulis</b> </label>
-                        <input type="email" class="form-control" id="penulis" value="Firenze_120219401" readonly name="penulis">
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="tahun_terbit"><b>Tahun Terbit</b> </label>
-                        <input type="text" class="form-control" id="tahun_terbit" placeholder="Contoh: 1990" name="tahun_terbit" value=<?php echo $row['tahun_terbit']; ?>>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="deskripsi"><b>Deskripsi</b> </label>
-                        <textarea class="form-control" id="deskripsi" rows="3" placeholder=<?php echo $row['deskripsi']; ?> name="deskripsi"></textarea>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="bahasa"><b>Bahasa</b></label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="bahasa" id="indonesia" value="indonesia">
-                            <label class="form-check-label" for="indonesia">Bahasa Indonesia</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="bahasa" id="lainnya" value="lainnya">
-                            <label class="form-check-label" for="lainnya">Lainnya</label>
-                        </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="Tag"><b>Tag</b></label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="pemrogaman" value="pemrogaman" name="tag[]">
-                            <label class="form-check-label" for="pemrogaman">Pemrogaman</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="website" value="website" name="tag[]">
-                            <label class="form-check-label" for="website">Website</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="java" value="java" name="tag[]">
-                            <label class="form-check-label" for="java">Java</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="oop" value="oop" name="tag[]">
-                            <label class="form-check-label" for="oop">OOP</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mvc" value="mvc" name="tag[]">
-                            <label class="form-check-label" for="mvc">MVC</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="kalkukus" value="kalkulus" name="tag[]">
-                            <label class="form-check-label" for="kalkulus">Kalkulus</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="lainnya" value="lainnya" name="tag[]">
-                            <label class="form-check-label" for="lainnya">Lainnya</label>
-                        </div>
-                    </div>
-
-                    <br>
-                    <div class="form - group">
-                        <label for="gambar"><b>Gambar</b></label>
-                        <input type="file" name="foto" class="form-control" id="inputGroupFile02" required="required">
-                    </div>
-                    <br><br>
-
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <?php $id = $row['id_buku']; ?>
-            <input class="btn btn-primary" type="submit" name="update" id="update" value="Simpan Perubahan" data-dismiss="modal"></center>
-          </div>
->>>>>>> 28fa868c088e11e61a2e494b996d98b5f3f7076d
 
                 <?php
                 if (mysqli_num_rows($selected) > 0) {
