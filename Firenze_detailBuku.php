@@ -57,7 +57,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                         <form action="Firenze_Update.php?id_buku=<?= $row["id_buku"]; ?>" method="post" enctype="multipart/form-data">
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <div class="container shadow mt-5 p-5">
+                                <div class="container mt-5 p-5">
 
                                     <div class="form-group mt-3">
                                         <label for="judul_buku"><b>Judul Buku</b> </label>
@@ -129,7 +129,7 @@ $selected = mysqli_query($conn, "SELECT * FROM buku_table WHERE id_buku = '$id_b
                             <!-- Modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <input type="submit" class="btn btn-primary" name="simpan" value="simpan">
+                                <input type="submit" class="btn btn-primary" name="simpan" value="Simpan Perubahan">
                             </div>
                         </form>
             </div>
